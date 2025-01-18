@@ -18,9 +18,5 @@ public class Inventory {
 
     private LocalDateTime lastUpdated;
 
-    @ManyToOne
-    @JoinColumn(name = "productId", insertable = false, updatable = false)
-    private ProductCatalog product;
-
     // Getters and Setters
 }
