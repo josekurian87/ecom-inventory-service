@@ -1,6 +1,5 @@
 package com.secor.ecominventoryservice;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +15,11 @@ public class InventoryController {
     @GetMapping
     public List<Inventory> getAllInventory() {
         return inventoryRepository.findAll();
+    }
+
+    @GetMapping("/{productId}")
+    public Inventory getInventoryForProductId(@PathVariable Long productId) {
+        return inventoryRepository.findByProductId(productId);
     }
 
     @PostMapping
